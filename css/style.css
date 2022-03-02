@@ -1,6 +1,140 @@
+:root {
+  --color-sage: #C9CBA3;
+  --color-peach: #FFE1A8;
+  --color-terra-cotta: #E26D5C;
+  --color-catawba: #723D46;
+  --color-old-burgundy: #472D30;
+  --color-dark-orange: darkorange;
+}
+
+body {
+  text-align: center;
+  font-size: 10px;
+  /* for easy font calculations */
+  margin: 0;
+  padding: 0;
+  color: var(--color-old-burgundy);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark-orange);
+}
+
+h1 {
+  background-color: var(--color-sage);
+  padding: 1em;
+  font-size: 4em;
+}
+
+#synopsis {
+  font-size: 2em;
+}
+
+#img-div {
+  border: 1px solid black;
+  margin: auto;
+  max-width: 800px;
+}
+
+figure.figurefx {
+  padding: 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+figure.figurefx figcaption {
+  position: absolute;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.6em;
+  color: var(--color-peach);
+  background-color: var(--color-catawba);
+  padding: 15px;
+  z-index: 100;
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  top: 50%;
+  left: 0;
+  -moz-transform: translate3d(-100%, -50%, 0);
+  /* position caption outside layout horizontally and centered vertically */
+  -webkit-transform: translate3d(-100%, -50%, 0);
+  transform: translate3d(-100%, -50%, 0);
+  opacity: 0;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*** Push Up effect ****/
+figure.pushup img {
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+figure.pushup figcaption {
+  top: 100%;
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+figure.pushup:hover img {
+  -moz-transform: translate3d(0, -20px, 0);
+  /* move image up vertically a bit for parallax effect */
+  -webkit-transform: translate3d(0, -20px, 0);
+  transform: translate3d(0, -20px, 0);
+  opacity: .99;
+
+}
+
+figure.pushup:hover figcaption {
+  -moz-transform: translate3d(0, -100%, 0);
+  /* move caption up vertically to fully reveal caption */
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  box-shadow: 0px -2px 28px rgba(0, 0, 0, 0.8);
+}
+
 img {
-    max-width: 100%;
-    display: block;
-    height: auto;
-    margin: 0 auto;
-  }
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+ul li {
+  padding: 10px 0;
+}
+
+#tribute-info {
+  font-size: 1.6em;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--color-catawba);
+  color: var(--color-sage);
+  font-size: 2em;
+  padding: 0.5em;
+}
